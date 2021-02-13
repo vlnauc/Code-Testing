@@ -1,0 +1,4 @@
+insert into devops_sch.movies values ( 1, 'Fast & Furious 5', 2011 );
+insert into devops_sch.movies values ( 2, 'Fast & Furious 6', 2014 );
+insert into devops_sch.movies values ( 3, 'Fast & Furious 8', 2017 );
+

@@ -1,0 +1,22 @@
+{
+    "name": "Fast & Furious 6",
+    "type":"movie",
+    "Number in serie": 6,
+    "actors":[
+        {
+            "fullname":"Vin Diesel"
+        },
+        {
+            "fullname":"Paul Walker"
+        },
+        {
+            "fullname":"Dwayne Johnson"
+        },
+        {
+            "fullname":"Michelle Rodriguez"
+        }
+    ],
+    "rating":"71%"
+}
+
+

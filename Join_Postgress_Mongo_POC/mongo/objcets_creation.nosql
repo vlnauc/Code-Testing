@@ -1,0 +1,7 @@
+use test_db
+db.createCollection("movies")
+db.movie.save(
+    'FF6_record.json'
+)
+
+db.movies.find({"actors":{"fullname":"Vin Diesel"}})

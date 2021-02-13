@@ -1,4 +1,4 @@
-solution developed and tested on:
+Solution developed and tested on:
     - Linux Ubuntu 20LTS
     - Docker version 19.03.8
     - Python 3.8.5

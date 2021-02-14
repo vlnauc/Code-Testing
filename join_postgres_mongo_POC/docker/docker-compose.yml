@@ -24,6 +24,8 @@ services:
         context: .
         dockerfile: ./DockerFile#python
     image: python
+    stdin_open: true
+    tty: true
     volumes:
       - ./../python:/home
     depends_on:

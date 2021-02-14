@@ -1,7 +1,10 @@
 MONGO_USERNAME='mongo'
 MONGO_PASSWORD='mongo'
 
-mongo < /home/src/objects_creation.sh
+mongo -u ${MONGO_USERNAME} \
+      -p ${MONGO_PASSWORD} \
+      --authenticationDatabase 'admin' \
+      < /home/src/objects_creation.sh
 
 mongoimport -u ${MONGO_USERNAME} \
             -p ${MONGO_PASSWORD} \

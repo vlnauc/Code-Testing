@@ -20,40 +20,14 @@ docker run -d --name ${MONGO_CONTAINER_NAME} \
             -v $PWD/mongo:/home \
             mongo
 
-#docker run -d --name ${MONGO_CONTAINER_NAME} \
-#            -e MONGO_INITDB_ROOT_USERNAME=${MONGO_USERNAME} \
-#            -e MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD} \
-#            -p ${MONGO_PORT}:${MONGO_PORT} \
-#            -v $PWD/mongo:/home \
-#            mongo
-
 # just print of IP 
 echo "Mongo docker  DB is running on IP:"
 docker inspect --format '{{ .NetworkSettings.IPAddress }}' ${MONGO_CONTAINER_NAME}
 
-# sleep 5 seconds - waiting to start mongo docker
+# sleep 10 seconds - waiting to start mongo docker
 sleep 10
 
 docker exec -it ${MONGO_CONTAINER_NAME} bash /home/set_up_mongo_env.sh
-
-# creating DB and collection
-#mongo   --host ${MONGO_HOSTNAME} \
-#        --port ${MONGO_PORT} \
-#        -u ${MONGO_USERNAME} \
-#        -p ${MONGO_PASSWORD} \
-#        --authenticationDatabase 'admin' \
-#        < ./mongo/objects_creation.sh
-
-
-# importing data to MongoDB
-#mongoimport --host ${MONGO_HOSTNAME} \
-#            --port ${MONGO_PORT} \
-#            -u ${MONGO_USERNAME} \
-#            -p ${MONGO_PASSWORD} \
-#            --authenticationDatabase 'admin' \
-#            -d 'test_db' \
-#            --collection 'movies' \
-#            --file ./mongo/FF6_record.json
 
 #postgres configuration
 #########################################################################################################
@@ -72,31 +46,11 @@ docker run -d --name ${POSTGRES_CONTAINER_NAME} \
              -v $PWD/postgres:/home \
             postgres
 
-#docker run -d --name ${POSTGRES_CONTAINER_NAME} \
-#            -e POSTGRES_PASSWORD=${POSTGRES_PASSWORD} \
-#            #-p ${POSTGRES_PORT}:${POSTGRES_PORT} \
-#            -v $PWD/postgres:/home \
-#            postgres
-
 echo "Postgres docker is running on IP:"
 docker inspect --format '{{ .NetworkSettings.IPAddress }}' ${POSTGRES_CONTAINER_NAME}
 
 docker exec -it ${POSTGRES_CONTAINER_NAME} bash /home/set_up_postgres_env.sh
 
-
-#echo "*****************************************"
-#echo "Lets wait for Postgres start-up"
-#echo "*****************************************"
-#until PGPASSWORD=${POSTGRES_PASSWORD} psql -h ${POSTGRES_HOSTNAME} -U ${POSTGRES_USERNAME} -c '\q'; do
-#  sleep 1
-#done
-#echo "*****************************************"
-#echo "PSQL ready"
-#echo "*****************************************"
-#
-#PGPASSWORD=${POSTGRES_PASSWORD} psql -h ${POSTGRES_HOSTNAME} -p ${POSTGRES_PORT} -U ${POSTGRES_USERNAME} --file ./postgres/create_schema.psql
-#PGPASSWORD=${POSTGRES_PASSWORD} psql -h ${POSTGRES_HOSTNAME} -p ${POSTGRES_PORT} -U ${POSTGRES_USERNAME} --file ./postgres/movies.ddl
-#PGPASSWORD=${POSTGRES_PASSWORD} psql -h ${POSTGRES_HOSTNAME} -p ${POSTGRES_PORT} -U ${POSTGRES_USERNAME} --file ./postgres/movies.dml
 
 #########################################################################################################
 # python configuration

@@ -1,0 +1,22 @@
+MongoDB shell version v4.4.3
+connecting to: mongodb://127.0.0.1:27017/?authSource=admin&compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("93504120-535c-47d6-a137-09b983732aea") }
+MongoDB server version: 4.4.3
+switched to db test_db
+{ "ok" : 1 }
+bye
+2021-02-14T23:18:07.572+0000	connected to: mongodb://localhost/
+2021-02-14T23:18:07.575+0000	1 document(s) imported successfully. 0 document(s) failed to import.
+*****************************************
+Lets wait for Postgres start-up
+*****************************************
+*****************************************
+PSQL ready
+*****************************************
+psql:/home/src/create_schema.psql:1: ERROR:  schema "devops_sch" does not exist
+CREATE SCHEMA
+CREATE TABLE
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+{'movie_id': 2, 'name': 'Fast & Furious 6', 'year': 2014, 'rating': '71%'}

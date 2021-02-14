@@ -3,18 +3,18 @@ services:
   
   mongo:
     container_name: mongo_poc
-    image: mongo
+    image: mongo:4.4
     environment:
-      - MONGO_INITDB_ROOT_USERNAME='mongo'
-      - MONGO_INITDB_ROOT_PASSWORD='mongo'
+      - MONGO_INITDB_ROOT_USERNAME=mongo
+      - MONGO_INITDB_ROOT_PASSWORD=mongo
     volumes:
         - ./../mongo:/home
 
   postgres:
     container_name: postgres_poc
-    image: postgres
+    image: postgres:13.2
     environment:
-      - POSTGRES_PASSWORD='postgres'
+      - POSTGRES_PASSWORD=postgres
     volumes:
       - ./../postgres:/home
 

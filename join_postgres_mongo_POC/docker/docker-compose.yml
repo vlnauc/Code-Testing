@@ -1,0 +1,31 @@
+version: "3"
+services:
+  
+  mongo:
+    container_name: mongo_poc
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME='mongo'
+      - MONGO_INITDB_ROOT_PASSWORD='mongo'
+    volumes:
+        - ./../mongo:/home
+
+  postgres:
+    container_name: postgres_poc
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD='postgres'
+    volumes:
+      - ./../postgres:/home
+
+  python:
+    container_name: python_poc
+    build: 
+        context: .
+        dockerfile: ./DockerFile#python
+    image: python
+    volumes:
+      - ./../python:/home
+    depends_on:
+        - mongo
+        - postgres

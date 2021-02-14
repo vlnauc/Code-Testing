@@ -1,0 +1,7 @@
+FROM python:3.9.1
+
+#installing python modules
+RUN pip install --upgrade pip 
+RUN pip install pymongo
+RUN pip install psycopg2
+

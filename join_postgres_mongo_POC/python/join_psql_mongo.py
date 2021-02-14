@@ -2,13 +2,15 @@ import pymongo
 import psycopg2
 import json
 
+mongo_host = 'mongo_poc'
+postgres_host = 'postgres_poc'
 
 #############
 #   MONGO   #
 #############
 
 def get_data_from_mongo():
-    myclient = pymongo.MongoClient("mongodb://localhost:27017/", username='mongo', password='mongo')
+    myclient = pymongo.MongoClient(f"mongodb://{mongo_host}:27017/", username='mongo', password='mongo')
     mydb = myclient["test_db"]
     mycol = mydb["movies"]
 
@@ -24,7 +26,7 @@ def get_data_from_mongo():
 
 def connec_postgres():
     return psycopg2.connect(
-        host = 'localhost',
+        host = postgres_host,
         port = 5432,
         #database = 'devops_sch', 
         user = 'postgres', 

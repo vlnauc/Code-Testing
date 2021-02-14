@@ -1,7 +1,8 @@
 Solution developed and tested on:
     - Linux Ubuntu 20LTS
     - Docker version 19.03.8
-    - Python 3.8.5
     - Docker containes:
-        postgres:latest
-        mongo:latest
+        - postgres:13.2
+        - mongo:4.4
+        - python:3.9.1
+                

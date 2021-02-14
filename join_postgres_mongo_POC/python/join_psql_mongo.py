@@ -41,7 +41,7 @@ def get_data_from_postgres(one=False):
         select
             movie_id,
             name,
-	        year
+            year
         from devops_sch.movies
         where name = 'Fast & Furious 6';
     '''
